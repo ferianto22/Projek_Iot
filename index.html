@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Distance Measurement</title>
+    <script>
+        async function fetchDistance() {
+            const response = await fetch('/distance');
+            const data = await response.json();
+            document.getElementById('distance').innerText = data.distance;
+        }
+
+        setInterval(fetchDistance, 500); // Update setiap 1 detik
+    </script>
+</head>
+<body>
+    <h1>Distance Measurement</h1><br>
+    <h4>Nama   : Muhammad Ferianto</h4>
+    <h4>NIM    : 1462100035</h4>
+    <h4>Matkul : Internet of Things R</h4><br>
+    <p>Distance: <span id="distance">Loading...</span> cm</p>
+</body>
+</html>
